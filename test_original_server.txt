@@ -1,0 +1,13 @@
+LINE	connected machine (original server)
+ECC1	2
+ECC2	2
+ECC3	2
+OSIS	4
+ES1	3
+ES2	3
+ES3	3
+ES4	2
+ES5	2
+TR1	2
+AS	4
+Total	42

@@ -1,0 +1,8 @@
+USE SiplaceOIS
+SELECT n.lPartNumber, d.sRejectIdent, d.sRejectVacuum, n.strPartNumber
+FROM [SiplaceOIS].[dbo].[CompDetail] d  
+	LEFT OUTER JOIN [SiplaceOIS].[dbo].[CompBlock] p on d.lIdBlock = p.lIdBlock
+	LEFT OUTER JOIN [SiplaceOIS].[dbo].[CompPosition] po on p.lId = po.lId
+	LEFT OUTER JOIN [SiplaceOIS].[dbo].[PARTNUMBER] n on po.[lPartNumber] = n.[lPartNumber]
+	LEFT OUTER JOIN [SiplaceOIS].[dbo].[CompPosition] ps  on ps.lIdPosition = d.lIdPosition
+where p.dtCreated  > '2021-07-03'

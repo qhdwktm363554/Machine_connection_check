@@ -1,0 +1,12 @@
+1. 하루 전에 각 라인 별로 machine이 몇개나 연결이 된건가:
+use SeojunAndon
+select Line	,count(distinct Station) as TotalMachines, cast(DateAdd("d", -1, GETDATE())as date) as "-1day", count(dtCreated) as row_count
+from [SeojunAndon].[dbo].[PickupDetail]
+where cast(dtCreated as date) = cast(DateAdd("d", -1, GETDATE())as date)
+group by Line
+
+2. 지난 7일 일별 총 row 수, 연결된 line 수:
+select top (7) cast(dtCreated as date) as Datefield, count(cast(dtCreated as date)) as TotalRows, count(distinct Line) as TotalLines
+from [SeojunAndon].[dbo].[PickupDetail]
+group by cast(dtCreated as date) 
+order by cast(dtCreated as date) desc

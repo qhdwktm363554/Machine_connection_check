@@ -1,0 +1,4 @@
+sql_query_1_original = "use SeojunAndon select Line ,count(distinct Station) as TotalMachines, cast(DateAdd("d", -1, GETDATE())as date) as "-1day" from [SeojunAndon].[dbo].[PickupDetail] where cast(dtCreated as date) = cast(DateAdd("d", -1, GETDATE())as date) group by Line"
+# sql_query_2_original = "select top (7) cast(dtCreated as date) as Datefield, count(cast(dtCreated as date)) as TotalRows, count(distinct Line) as TotalLines from [SeojunAndon].[dbo].[PickupDetail] group by cast(dtCreated as date)  order by cast(dtCreated as date) desc"
+# sql_query_1_backup = "use AKANDON select Line ,count(distinct Station) as TotalMachines, cast(DateAdd("d", -2, GETDATE())as date) as "-2day" from [AKANDON].[dbo].[PickupDetail] where cast(dtCreated as date) = cast(DateAdd("d", -2, GETDATE())as date) group by Line"
+# sql_query
